@@ -20,6 +20,8 @@ namespace CourseApp.Controllers
 
         public IActionResult Index()
         {
+            int currentHour = DateTime.Now.Hour;
+            ViewBag.Greeting = currentHour > 12 ? "Have a nice day" : "Good morning";
             return View();
         }
 
