@@ -1,5 +1,6 @@
 ﻿using CourseApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CourseApp.Controllers
 {
@@ -11,6 +12,10 @@ namespace CourseApp.Controllers
             return View();
         }
         
+        public IActionResult Apply()
+        {
+            return View();
+        }
         public IActionResult Details()
         {
             Course course = new Course();

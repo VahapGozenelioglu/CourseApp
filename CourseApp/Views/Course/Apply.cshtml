@@ -1,0 +1,39 @@
+﻿@model Student
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+             <title>Apply</title>
+</head>
+<body>
+<form asp-action="apply">
+    
+    <p>
+        <label asp-for="Name"> Your Name: </label>
+        <input asp-for="Name" value="John"/>
+    </p>
+    
+    <p>
+        <label asp-for="Email">Your Email</label>
+        <input asp-for="Email" value="asd123@zmail.com"/>
+    </p>
+    
+    <p>
+        <label asp-for="Phone">Your Phone Number</label>
+        <input asp-for="Phone" value="05245645121"/>
+    </p>
+    
+    <p>
+    <label asp-for="Confirm">Will you join?</label>
+    <select asp-for="Confirm">
+        <option value="true">Yes!</option>
+        <option value="false">No!</option>
+    </select>
+    </p>
+    <input type="submit" name="Submit"/>
+</form>
+</body>
+</html>
