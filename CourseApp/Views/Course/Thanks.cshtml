@@ -1,0 +1,27 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@model Student
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+             <title>Thanks</title>
+</head>
+<body>
+<h2>Hello @Model.Name </h2>
+
+<hr>
+@if (@Model.Confirm == true)
+{
+    <span>Thanks for applying!</span>
+    <div>
+        List Other Participants: <a asp-action="List"> List! </a>
+    </div>
+}
+else
+{
+    <span>Sorry, you didn't apply.</span>
+}
+</body>
+</html>

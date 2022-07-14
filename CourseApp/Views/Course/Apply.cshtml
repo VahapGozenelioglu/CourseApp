@@ -9,7 +9,7 @@
              <title>Apply</title>
 </head>
 <body>
-<form asp-action="apply">
+<form asp-action="apply" method="POST">
     
     <p>
         <label asp-for="Name"> Your Name: </label>
@@ -28,10 +28,11 @@
     
     <p>
     <label asp-for="Confirm">Will you join?</label>
-    <select asp-for="Confirm">
-        <option value="true">Yes!</option>
-        <option value="false">No!</option>
-    </select>
+        <select asp-for="Confirm">
+            <option value="choose">Please Choose</option>
+            <option value="true">Yes!</option>
+            <option value="false">No!</option>
+        </select>
     </p>
     <input type="submit" name="Submit"/>
 </form>

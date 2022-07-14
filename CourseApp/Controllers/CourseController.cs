@@ -1,4 +1,6 @@
-﻿using CourseApp.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using CourseApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,9 +14,24 @@ namespace CourseApp.Controllers
             return View();
         }
         
+        [HttpGet]
         public IActionResult Apply()
         {
             return View();
+        }
+        
+        [HttpPost]
+        public IActionResult Apply(Student student)
+        {
+            Repository.AddStudent(student);
+            return View("Thanks", student);
+        }
+        
+        [HttpGet]
+        public IActionResult List()
+        {
+            var students = Repository.GetAllStudents().Where(i=>i.Confirm == true);
+            return View(students);
         }
         public IActionResult Details()
         {
@@ -25,10 +42,7 @@ namespace CourseApp.Controllers
 
             return View(course);
         }
-        public string List()
-        {
-            return "Course/List Page";
-        }
+        
         
     }
 }
