@@ -23,8 +23,12 @@ namespace CourseApp.Controllers
         [HttpPost]
         public IActionResult Apply(Student student)
         {
-            Repository.AddStudent(student);
-            return View("Thanks", student);
+            if(ModelState.IsValid)
+            {
+                Repository.AddStudent(student);
+                return View("Thanks", student);    
+            }
+            return View(student);
         }
         
         [HttpGet]

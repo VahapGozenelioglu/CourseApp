@@ -1,12 +1,13 @@
 @{
     ViewData["Title"] = "Home";
 }
+<link rel="stylesheet" href="/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/css/site.css">
 
 <div class="text-center">
     <h1 class="display-4">@ViewBag.Greeting... This is Home Page</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    
+
     <p>
-        <a asp-action="Apply" asp-controller="Course">Apply to Course</a>
+        <a class="display-4" asp-action="Apply" asp-controller="Course">Apply to Course</a>
     </p>
 </div>
