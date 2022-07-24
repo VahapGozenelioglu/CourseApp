@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CourseApp.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -45,6 +46,18 @@ namespace CourseApp.Controllers
             course.IsPublished = true;
 
             return View(course);
+        }
+
+        public IActionResult CourseDetails(int? id, string sortby)
+        {
+            id = id.HasValue ? id : 1;
+            sortby = String.IsNullOrEmpty(sortby) ? "name" : sortby;
+            return Content("id = " + id + " sortby = " + sortby);
+        }
+
+        public IActionResult ByReleaseDate(int year, int month)
+        {
+            return Content("year = " + year + " month = " + month);
         }
         
         
