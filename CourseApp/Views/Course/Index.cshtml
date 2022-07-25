@@ -7,6 +7,16 @@
              <title>Index</title>
 </head>
 <body>
-    Course Index
+Course Index
+
+<h1>
+    @(((Course)ViewData["course"]).Name)
+</h1>
+<h1>
+    @(((Course) ViewData["course"]).Description)
+</h1>
+<h2>
+    @ViewBag.Point / 10
+</h2>
 </body>
 </html>

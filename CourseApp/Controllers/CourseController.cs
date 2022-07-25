@@ -11,6 +11,13 @@ namespace CourseApp.Controllers
     {
         public IActionResult Index()
         {
+            Course course = new Course();
+            course.Description = "ASP.NET Core";
+            course.Name = "Web Development Course";
+            course.IsPublished = true;
+            ViewData["course"] = course;
+            
+            ViewBag.Point = 10;
             
             return View();
         }
