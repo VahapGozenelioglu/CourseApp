@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CourseApp.Models;
+using CourseApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,15 +12,20 @@ namespace CourseApp.Controllers
     {
         public IActionResult Index()
         {
-            Course course = new Course();
-            course.Description = "ASP.NET Core";
-            course.Name = "Web Development Course";
-            course.IsPublished = true;
-            ViewData["course"] = course;
+            Course course = new Course() { Description = "Web Development Course" , Name = "ASP.NET Core", IsPublished = true};
+            List<Student> Students = new List<Student>()
+            {
+                new Student() {Name = "Ahmet"},
+                new Student() {Name = "Mehmet"}
+            };
+
+            CourseStudentsViewModel viewModel = new CourseStudentsViewModel()
+            {
+                Course = course,
+                Students = Students
+            };
             
-            ViewBag.Point = 10;
-            
-            return View();
+            return View(viewModel);
         }
         
         [HttpGet]
