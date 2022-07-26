@@ -69,7 +69,8 @@
     Header
 </div>
 
-@Html.Partial("_Menu",Model.Categories)
+@*@Html.Partial("_Menu",Model.Categories)*@
+@await Component.InvokeAsync("Menu")
 
 <div id="content">
     Content
