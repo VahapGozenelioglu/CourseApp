@@ -1,16 +1,13 @@
-﻿<div id="menu">
+﻿@model IEnumerable<Category>
+
+<div id="menu">
     <ul>
-        <li>
-            <a href="/">Category 1</a>    
-        </li>
-        
-        <li>
-            <a href="/">Category 2</a>            
-        </li>
-        
-        <li>
-            <a href="/">Category 3</a>
-        </li>
-        
+        @foreach (var category in Model)
+        {
+            <li>
+                <a href="/">@category.Name</a>
+            </li>
+        }
+
     </ul>
 </div>

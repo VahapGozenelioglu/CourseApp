@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CourseApp.Models;
+using CourseApp.ViewModels;
 
 namespace CourseApp.Controllers
 {
@@ -32,7 +33,25 @@ namespace CourseApp.Controllers
 
         public IActionResult About()
         {
-            return View();
+            var categories = new List<Category>()
+            {
+                new Category() {Name = "Category 1"},
+                new Category() {Name = "Category 2"},
+                new Category() {Name = "Category 3"}
+            };
+
+            var products = new List<Product>()
+            {
+                new Product(){Name = "Product1"},
+                new Product(){Name = "Product2"},
+                new Product(){Name = "Product3"},
+            };
+            
+            var viewModel = new ProductCategoriesViewModel();
+            viewModel.Categories = categories;
+            viewModel.Products = products;
+            
+            return View(viewModel);
         }
         
 
